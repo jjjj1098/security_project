@@ -313,6 +313,206 @@
                             }
                         }
                     </script>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="#4" onclick="openNewWindow4(event)" title="Project Name">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="..." />
+                            <div class="overlay-text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 24px; text-shadow: 2px 2px 5px rgba(0,0,0,0.7);">
+                                Inputting a Specific Query and Analyzing the Results
+                            </div>
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Inputting a Specific Query and Analyzing the Results</div>
+                            </div>
+                        </a>
+                    <script>
+                        function openNewWindow4(event) {
+                            event.preventDefault(); // 기본 동작 방지
+                            // 새로운 창 열기
+                            const newWindow = window.open("hello1", "_blank", "width=400,height=200");
+                
+                            if (newWindow) {
+                                // 새 창에 HTML 작성
+                                newWindow.document.write("Step 1: Inputting a Specific Query\
+                                <br>To demonstrate Google hacking techniques, specific search queries (\"Dorks\") are used to uncover publicly accessible but sensitive information.\
+                                <br><br>Example Query 1: inurl:login.php intitle:\"admin\"\
+                                <br>Purpose: Identify login pages with \"admin\" in the title and \"login.php\" in the URL, indicating potential administrative login panels.\
+                                <br>What It Does:\
+                                <br>Searches for publicly accessible admin portals where security may be weak.\
+                                <br>Focuses on specific URL and title patterns common in admin pages.\
+                                <br>Expected Results:\
+                                <br>Unprotected or poorly secured login pages for admin panels.\
+                                <br>Potential exposure of admin credentials or access to backend systems.\
+                                <br><br>Example Query 2: filetype:pdf inurl:\"payroll\"\
+                                <br>Purpose: Locate PDF documents containing sensitive payroll information that are improperly indexed.\
+                                <br>What It Does:\
+                                <br>Targets financial or personnel data by combining file type (pdf) and relevant keywords (payroll).\
+                                <br>Finds documents that may include employee salary records, account numbers, or other private details.\
+                                <br>Expected Results:\
+                                <br>Payroll files exposed on public servers.\
+                                <br>Financial documents containing sensitive corporate or employee data.\
+                                <br><br>Step 2: Analyzing the Results\
+                                <br>The search queries often return critical vulnerabilities and sensitive information. Below are detailed examples of the types of results revealed:\
+                                <br><br>Result Type 1: Admin Login Pages\
+                                <br>Findings:\
+                                <br>Login pages without HTTPS encryption, meaning credentials are transmitted in plaintext.\
+                                <br>Pages with default credentials such as admin:admin or root:password.\
+                                <br>Exposed pages linked to critical backend systems like CMS (Content Management Systems), corporate dashboards, or IoT control panels.\
+                                <br>Risks:\
+                                <br>Unauthorized access to administrative systems.\
+                                <br>Attackers can compromise websites, manipulate data, or inject malicious content.\
+                                <br>Examples of Real-World Impact:\
+                                <br>An unprotected admin portal led to an attacker accessing and defacing a government website.\
+                                <br>Default login credentials were used to gain unauthorized access to a corporate backend system.\
+                                <br><br>Result Type 2: Sensitive Files and Documents\
+                                <br>Findings:\
+                                <br>Payroll PDFs, financial reports, or confidential Excel files.\
+                                <br>Exposed configuration files such as config.php or web.config containing database credentials or system paths.\
+                                <br>Backup files like .sql databases or .zip archives left unprotected.\
+                                <br>Risks:\
+                                <br>Exposure of employee records (names, salaries, banking details).\
+                                <br>Leakage of database credentials, leading to full system compromise.\
+                                <br>Unauthorized access to corporate secrets or client data.\
+                                <br>Examples of Real-World Impact:\
+                                <br>Publicly available payroll files led to identity theft and phishing attacks targeting employees.\
+                                <br>Database backups allowed attackers to extract user account credentials and compromise entire systems.\
+                                <br><br>Result Type 3: Directory Listings\
+                                <br>Findings:\
+                                <br>Open directories (index of /) displaying file listings.\
+                                <br>Access to sensitive folders such as /backups/, /logs/, or /uploads/.\
+                                <br>Files containing usernames, passwords, or error logs.\
+                                <br>Risks:\
+                                <br>Attackers can download confidential files or logs.\
+                                <br>Misconfigured directories often expose critical business data or system files.\
+                                <br>Examples of Real-World Impact:\
+                                <br>Misconfigured server directories revealed customer transaction logs.\
+                                <br>Backup folders exposed sensitive system data, which was exploited for ransomware attacks.\
+                                ");
+                                newWindow.document.close(); // 문서 작성 완료
+                            } else {
+                                alert("새 창을 열 수 없습니다. 팝업 차단 설정을 확인하세요.");
+                            }
+                        }
+                    </script>
+                    </div>
+                    
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="#5" onclick="openNewWindow5(event)" title="Project Name">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="..." />
+                            <div class="overlay-text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 24px; text-shadow: 2px 2px 5px rgba(0,0,0,0.7);">
+                                Evaluating Security Weaknesses
+                            </div>
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Evaluating Security Weaknesses</div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <script>
+                        function openNewWindow5(event) {
+                            event.preventDefault(); // 기본 동작 방지
+                            // 새로운 창 열기
+                            const newWindow = window.open("hello2", "_blank", "width=400,height=200");
+                
+                            if (newWindow) {
+                                // 새 창에 HTML 작성
+                                newWindow.document.write("The results highlight specific security weaknesses that can be exploited:\
+                                <br>1. Default Credentials:\
+                                <br>Issue: Default admin passwords (e.g., admin:admin) are left unchanged, allowing attackers easy access.\
+                                <br>Impact: Systems can be fully compromised with minimal effort.\
+                                <br>2. Unencrypted Communication:\
+                                <br>Issue: Login pages using HTTP instead of HTTPS transmit data in plaintext.\
+                                <br>Impact: Attackers can intercept credentials using tools like packet sniffers.\
+                                <br>3. Exposed Configuration Files:\
+                                <br>Issue: Configuration files reveal sensitive information such as database credentials.\
+                                <br>Impact: Unauthorized access to databases or backend systems.\
+                                <br>4. mproper Directory Permissions:\
+                                <br>Issue: Directory indexing is enabled, exposing sensitive files.\
+                                <br>Impact: Attackers can download files or exploit exposed data.\
+                                <br>5. Outdated Security Practices:\
+                                <br>Issue: Lack of proper authentication mechanisms (e.g., MFA, IP whitelisting).\
+                                <br>Impact: Admin panels remain vulnerable to brute-force attacks.\
+                                ");
+                                newWindow.document.close(); // 문서 작성 완료
+                            } else {
+                                alert("새 창을 열 수 없습니다. 팝업 차단 설정을 확인하세요.");
+                            }
+                        }
+                    </script>
+
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="#6" onclick="openNewWindow6(event)" title="Project Name">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/6.jpg" alt="..." />
+                            <div class="overlay-text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 24px; text-shadow: 2px 2px 5px rgba(0,0,0,0.7);">
+                                Practical Demonstration and Reporting Findings and Mitigations
+
+                            </div>
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Practical Demonstration and Reporting Findings and Mitigations
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <script>
+                        function openNewWindow6(event) {
+                            event.preventDefault(); // 기본 동작 방지
+                            // 새로운 창 열기
+                            const newWindow = window.open("hello3", "_blank", "width=400,height=200");
+                
+                            if (newWindow) {
+                                // 새 창에 HTML 작성
+                                newWindow.document.write("Step 4: Practical Demonstration\
+                                <br>1. Scenario: Locating a Payroll Document\
+                                <br>Query: filetype:pdf inurl:\"payroll\"\
+                                <br>Results:\
+                                <br>Payroll documents titled “2023_payroll_final.pdf” appear in search results.\
+                                <br>Documents include employee names, salaries, and bank account details.\
+                                <br>Misuse:\
+                                <br>Attackers use this information for identity theft, phishing attacks, or selling data on the dark web.\
+                                <br>2. Scenario: Finding Exposed Admin Panels\
+                                <br>Query: intitle:\"admin panel\" inurl:admin\
+                                <br>Results:\
+                                <br>Admin login portals for corporate websites or web applications.\
+                                <br>Default credentials allow unauthorized access.\
+                                <br>Misuse:\
+                                <br>Attackers deface websites, steal data, or deploy malware.\
+                                <br>3. Scenario: Discovering Backup Files\
+                                <br>Query: filetype:sql inurl:backup\
+                                <br>Results:\
+                                <br>Database backups with user account credentials are publicly accessible.\
+                                <br>Misuse:\
+                                <br>Attackers extract usernames and passwords, leading to account takeovers or full database compromise.\
+                                <br><br>Step 5: Reporting Findings and Mitigations\
+                                <br>Key Risks\
+                                <br>Sensitive data leaks (e.g., financial records, employee details).\
+                                <br>Unauthorized access to administrative systems.\
+                                <br>Database compromises leading to further attacks (e.g., SQL injection).\
+                                <br><br>Mitigation Strategies\
+                                <br>1. Prevent Search Engine Indexing:\
+                                <br>Use robots.txt to block sensitive directories from being indexed.\
+                                <br>javascript\
+                                <br>User-agent: *  \
+                                <br>Disallow: /admin/\
+                                <br>Disallow: /backups/\
+                                <br>2. Secure Admin Panels:\
+                                <br>Change default credentials immediately.\
+                                <br>Implement multi-factor authentication (MFA).\
+                                <br>Use IP whitelisting to restrict access.\
+                                <br>3. Encrypt Data:\
+                                <br>Use HTTPS to protect login credentials and data in transit.\
+                                <br>4. Disable Directory Indexing:\
+                                <br>Configure servers to disable directory listing and restrict file access.\
+                                <br>5. Regular Security Audits:\
+                                <br>Conduct regular vulnerability scans to identify and fix misconfigurations.\
+                                <br>Use Google Dorking to check if sensitive files or systems are exposed.\
+                                ");
+                                newWindow.document.close(); // 문서 작성 완료
+                            } else {
+                                alert("새 창을 열 수 없습니다. 팝업 차단 설정을 확인하세요.");
+                            }
+                        }
+                    </script>
                 </div>
             </div>
         </div>
