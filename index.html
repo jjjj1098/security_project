@@ -178,7 +178,7 @@
                 
                             if (newWindow) {
                                 // 새 창에 HTML 작성
-                                newWindow.document.write("What is Dorking?<br>•	Dorking refers to the practice of using advanced search operators to extract specific information from publicly accessible websites. <br>•	It leverages Google's search engine capabilities to uncover sensitive information, misconfigured systems, or files that should not be exposed. <br> Key Query Types: <br> 1.	site:o	Searches within a specific domain. <br>o	Example: site:example.com retrieves all indexed pages within \"example.com\". <br> o	Use: Identify publicly accessible resources or hidden directories on a particular domain. <br> 2.	intitle: <br>o	Searches for pages where a specific keyword appears in the title.<br> o	Example: intitle:\"admin login\" retrieves pages titled \"admin login\".<br>o	Use: Locate login portals or administrative panels.<br> 3.	filetype:<br>o	Searches for specific file types such as PDFs, Excel sheets, or configuration files.<br>o	Example: filetype:xlsx confidential retrieves Excel files containing the word \"confidential\".<br>o	Use: Identify sensitive documents exposed online.<br>4.	inurl:o	Searches for specific keywords within the URL.<br>o	Example: inurl:php?id= retrieves URLs that might be vulnerable to SQL injection.<br>o	Use: Discover potentially vulnerable web pages.");
+                                newWindow.document.write("What is Dorking?<br>-Dorking refers to the practice of using advanced search operators to extract specific information from publicly accessible websites.<br>-It leverages Google's search engine capabilities to uncover sensitive information, misconfigured systems, or files that should not be exposed.<br><br><br>Key Query Types<br><br>1. site:<br>Searches within a specific domain.<br>Example: site:example.com retrieves all indexed pages within \"example.com\".<br>Use: Identify publicly accessible resources or hidden directories on a particular domain.<br><br>2. intitle:<br>Searches for pages where a specific keyword appears in the title.<br>Example: intitle:\"admin login\" retrieves pages titled \"admin login\".<br>Use: Locate login portals or administrative panels.<br><br>3. filetype:<br>Searches for specific file types such as PDFs, Excel sheets, or configuration files.<br>Example: filetype:xlsx confidential retrieves Excel files containing the word \"confidential\".<br>Use: Identify sensitive documents exposed online.<br><br>4. inurl:<br>Searches for specific keywords within the URL.<br>Example: inurl:php?id= retrieves URLs that might be vulnerable to SQL injection.<br>Use: Discover potentially vulnerable web pages.<br><br>Additional Key Query Types<br>5. ext:<br>An alternative to filetype:, used to search for specific file extensions.<br>Example: ext:log searches for log files.<br>Use: Locate log files that may contain sensitive server or user information.<br><br>6. cache:<br>Displays the cached version of a web page as stored by Google.<br>Example: cache:example.com shows Google’s last stored version of \"example.com\".<br>Use: Retrieve a page that may have been modified or deleted from the live website.<br><br>7. related:<br>Finds websites similar to a given domain.<br>Example: related:example.com retrieves websites similar to \"example.com\".<br>Use: Identify related domains or competitors' sites.<br><br>8. allintext:<br>Searches for pages containing specific words in the page body.<br>Example: allintext:\"password file\" retrieves pages with \"password file\" in the text.<br>Use: Locate pages with sensitive information like passwords or keys.<br><br>9. allintitle:<br>Searches for pages where all specified keywords appear in the title.<br>Example: allintitle:\"index of backup\" retrieves pages where \"index of backup\" appears in the title.<br>Use: Locate backup files or exposed directories.<br><br>10. allinurl:<br>Searches for pages where all specified keywords appear in the URL.<br>Example: allinurl:admin login retrieves URLs with \"admin\" and \"login\".<br>Use: Find specific admin or login pages that may be exposed.<br>");
                                 newWindow.document.close(); // 문서 작성 완료
                             } else {
                                 alert("새 창을 열 수 없습니다. 팝업 차단 설정을 확인하세요.");
@@ -212,10 +212,10 @@
                                     <br>1.	SQL Injection:\
                                     <br>o	Using Google Dorks to find URLs that accept input parameters (inurl:php?id=), which may be vulnerable to SQL injection attacks.\
                                     <br>o	Attackers can exploit these vulnerabilities to access or manipulate databases.\
-                                    <br>2.	Directory Enumeration:\
+                                    <br><br>2.	Directory Enumeration:\
                                     <br>o	Locating exposed directories or file paths using queries like intitle:index of or site:example.com filetype:log.\
                                     <br>o	Example: Exposed directory listings containing sensitive configuration or log files.\
-                                    <br>3.	Administrator Panel Discovery:\
+                                    <br><br>3.	Administrator Panel Discovery:\
                                     <br>o	Using queries such as intitle:\"admin panel\" inurl:admin to identify unprotected admin portals.\
                                     <br>o	If default credentials are not changed, attackers can gain unauthorized access.\
                                     <br>Examples of Known Scenarios:\
@@ -250,26 +250,63 @@
                             if (newWindow) {
                                 // 새 창에 HTML 작성
                                 newWindow.document.write("Step 1: Inputting a Specific Query\
-                                <br>•	Example query: inurl:login.php intitle:\"admin\"\
-                                <br>o	Searches for login pages with \"admin\" in the title and \"login.php\" in the URL.\
-                                <br>o	Expected result: Pages of unprotected or poorly secured admin portals.\
-                                <br>Step 2: Analyzing the Results\
-                                <br>•	Results often reveal:\
-                                <br>o	Login pages without HTTPS encryption.\
-                                <br>o	Default admin pages with generic credentials.\
-                                <br>o	Pages providing sensitive system information.\
-                                <br>Step 3: Evaluating Security Weaknesses\
-                                <br>•	Vulnerability 1: Default credentials left unchanged, making systems easy to breach.\
-                                <br>•	Vulnerability 2: Exposed configuration files revealing sensitive system paths.\
-                                <br>•	Vulnerability 3: Lack of proper access controls, allowing unauthorized users access to administrative areas.\
-                                <br>Step 4: Practical Demonstration\
-                                <br>•	Simulate using filetype:pdf inurl:\"payroll\" to locate payroll documents unintentionally exposed online.\
-                                <br>•	Results analysis: Highlight how easily sensitive financial documents can be accessed due to poor indexing.\
-                                <br>Step 5: Reporting Findings\
-                                <br>•	Emphasize the risks of improper indexing and demonstrate how to protect against these vulnerabilities:\
-                                <br>o	Blocking sensitive files from being indexed using robots.txt.\
-                                <br>o	Implementing authentication and access control on admin pages.\
-                                ");
+                                        <br>Example Query: inurl:login.php intitle:\"admin\"\
+                                        <br>Purpose: Search for login pages where \"admin\" appears in the title and \"login.php\" is part of the URL.\
+                                        <br>Expected Result: Pages of unprotected or poorly secured admin portals that may be accessible without proper authentication.\
+                                        <br><br>Additional Queries for Admin Portals:\
+                                        <br>intitle:\"Admin Panel\" inurl:admin — Admin panel URLs with “admin” in their paths.\
+                                        <br>intitle:\"Control Panel\" -demo — Control panels excluding demo versions.\
+                                        <br>Purpose: Expand the search for alternative admin or control panel URLs that may have been misconfigured.\
+                                        <br><br>Step 2: Analyzing the Results\
+                                        <br>Results often expose critical weaknesses such as:\
+                                        <br>Login pages without HTTPS encryption: Transmitting login credentials in plaintext, making them vulnerable to interception.\
+                                        <br>Default admin pages: Pages with generic or unchanged credentials (e.g., admin:admin, root:password).\
+                                        <br>Exposed system details: Error messages or configuration information displayed on the page, which attackers can exploit.\
+                                        <br>Misconfigured directory access: Directory paths accessible from admin pages that may contain sensitive files or backups.\
+                                        <br><br>Step 3: Evaluating Security Weaknesses\
+                                        <br>Vulnerability 1: Default credentials left unchanged.\
+                                        <br>Impact: Allows attackers to gain unauthorized administrative access with minimal effort.\
+                                        <br>Vulnerability 2: Exposed configuration files.\
+                                        <br>Impact: Provides attackers with sensitive system paths, database credentials, or other critical information.\
+                                        <br>Vulnerability 3: Lack of proper access controls.\
+                                        <br>Impact: Allows unauthorized users to view or manipulate administrative pages and data.\
+                                        <br>Additional Vulnerability:\
+                                        <br>Improper session management: Admin sessions that remain active without timeouts or proper logout mechanisms can be hijacked.\
+                                        <br>Lack of IP restrictions: Admin pages are publicly accessible without IP whitelisting or access control lists (ACLs).\
+                                        <br><br>Step 4: Practical Demonstration\
+                                        <br>Example Query: filetype:pdf inurl:\"payroll\"\
+                                        <br>Purpose: Locate PDF documents containing payroll information unintentionally indexed by search engines.\
+                                        <br>Steps to Simulate:\
+                                        <br>Input the query into a search engine and analyze the results.\
+                                        <br>Check for financial records, salary slips, or employee data within the files.\
+                                        <br>Extended Demonstration Queries:\
+                                        <br>filetype:log inurl:\"error\" — Identify log files that may contain error messages and debug information.\
+                                        <br>filetype:sql inurl:backup — Locate SQL database backups left exposed online.\
+                                        <br>Results Analysis:\
+                                        <br>Sensitive financial and personal data can be accessed due to poor indexing and improper server configuration.\
+                                        <br>Such documents often contain critical business or employee information, leading to privacy violations and financial losses.\
+                                        <br><br>Step 5: Reporting Findings and Mitigations\
+                                        <br>Emphasize Key Risks:\
+                                        <br>Highlight the risks of exposed admin pages, sensitive files, and improper indexing.\
+                                        <br>Demonstrate how attackers can exploit these weaknesses to gain unauthorized access or steal data.\
+                                        <br>Mitigation Strategies:\
+                                        <br>Preventing Indexing of Sensitive Files:\
+                                        <br>Use robots.txt to block search engines from crawling sensitive directories and files.\
+                                        <br>Example:\
+                                        <br>javascript\
+                                        <br>User-agent: *  \
+                                        <br>Disallow: /admin/  \
+                                        <br>Disallow: /confidential/\
+                                        <br>Securing Admin Pages:\
+                                        <br>Change default credentials immediately and use strong, complex passwords.\
+                                        <br>Implement IP whitelisting and multi-factor authentication (MFA) for admin portals.\
+                                        <br>Hide admin URLs using non-obvious names (e.g., /secure-login instead of /admin).\
+                                        <br>Encrypting Data Transmission:\
+                                        <br>Ensure all login pages use HTTPS to protect credentials from being intercepted.\
+                                        <br>Disabling Directory Listing:\
+                                        <br>Configure web servers to prevent directory indexing and unauthorized file access.\
+                                        <br>Regular Security Audits:\
+                                        <br>Conduct regular penetration tests and vulnerability scans to identify exposed admin pages, configuration files, and sensitive data.");
                                 newWindow.document.close(); // 문서 작성 완료
                             } else {
                                 alert("새 창을 열 수 없습니다. 팝업 차단 설정을 확인하세요.");
